@@ -1,8 +1,15 @@
 // Put a table view on top of "Welcome to Bim Bap. /n To Begin create a post"
 // Make that table view hidden at default (and load the table view when there's a post in the table)
+// Present View Controller function (and dismiss function) replaced with PresentDetail and Dismiss Detail functions so that the view controller slides in from left / right instead of default from bottom
 
-Outlets: tableView
-Actions: addButtonPressed
+Outlets: 
+tableView
+
+Actions: 
+addButtonPressed() {
+  guard let createVC = storyboard?.instantiateViewController(withIdentifier: "CreateVC") else {return}
+  presentDetail(createVC)
+}
 
 Show tableView 
 tableView.isHidden = false
