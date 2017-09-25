@@ -1,0 +1,15 @@
+// App called "Priorities" - For group workflows (within a company, what is the most important task at hand)
+// Each priority has a type
+// Our cell has up vote and down vote arrows on the left
+// UITableViewCell
+
+Outlets: 
+textLabel ("finish draft of research proposal")
+typeLabel ("Finance and Accounting")
+voteCountLabel (32)
+
+func configureCell(text: String, type: String, voteCount: Int) {
+  self.textLabel.text = text
+  self.typeLabel.text = type
+  self.voteCountLabel.text = String(describing: votecount)
+}
