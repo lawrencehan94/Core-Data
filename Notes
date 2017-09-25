@@ -3,4 +3,23 @@
  Entities are like classes
  Attributes are like properties
  
+ Core Data is for persistent storage (we can access data later)
  
+ Managed object model -> Pulls data model into the core data stack
+ - You will be interacting with the managed object context for most
+ - Persistent store coordinator coordinates data and handles persistent store
+ 
+ (1) Instantiate core data model
+ (2) model instantiates store coordinator
+ (3) then managed object context pulls data
+ 
+ Create an entity
+ (1) Rename entity "Priority"
+ (2) Create an attribute "text" : String
+ (3) Create an attribute "type" : String
+ (4) Create an attribute "votesMax": Integer 32 (easier to access in code)
+ (5) Create an attribute "votes": Integer 32
+ 
+ OR THROUGH CODE
+ let priority = Priority()
+ priority.votes = Int32(exactly: 35)
