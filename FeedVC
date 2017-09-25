@@ -1,0 +1,7 @@
+// Put a table view on top of "Welcome to Bim Bap. /n To Begin create a post"
+// Make that table view hidden at default (and load the table view when there's a post in the table)
+
+Outlets: tableView
+Actions: addButtonPressed
+
+
