@@ -4,4 +4,15 @@
 Outlets: tableView
 Actions: addButtonPressed
 
+Show tableView 
+tableView.isHidden = false
 
+Add a table View Extension
+  Number of sections: 1
+  Number of rows: 
+  CellForRowAt:
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "PriorityCell") as? Prioritycell else {return UITableViewCell() }
+    
+    Add data to the cell:
+    cell.configureCell(text: "Finish management presentation", type: "Live", votes: 40)
+    return cell
