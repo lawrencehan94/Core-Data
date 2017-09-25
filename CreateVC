@@ -6,7 +6,7 @@ nextButton
 
 Actions: 
 backButtonPressed() {
-  dismiss(animated: true, completion: nil) //dismiss the current VC
+  dismissDetail()
 }
 
 liveButtonPressed()
