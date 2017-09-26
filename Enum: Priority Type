@@ -1,0 +1,6 @@
+enum PriorityType: String {
+  case live = "Live"
+  case bizdev = "Business Development"
+}
+
+now enumerators will have a type ("live, "business development") of type string.
