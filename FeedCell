@@ -8,8 +8,8 @@ textLabel ("finish draft of research proposal")
 typeLabel ("Finance and Accounting")
 voteCountLabel (32)
 
-func configureCell(text: String, type: String, voteCount: Int) {
+func configureCell(text: String, type: PriorityType voteCount: Int) {
   self.textLabel.text = text
-  self.typeLabel.text = type
+  self.typeLabel.text = type.rawValue
   self.voteCountLabel.text = String(describing: votecount)
 }
