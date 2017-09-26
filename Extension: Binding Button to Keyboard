@@ -1,0 +1,26 @@
+import UIKit (foundation doesn't work for UIView, etc.)
+
+// add an observer to the keyboard whenever it is used (default iOS notification whenever keyboard is fired)
+// from the observer, we want to pull out its details (keyboard animation duration, frame below and above), so we can set them as custom parameters for our function
+// add variable that finds difference between beginning and end so that you know how much to boost the UIView by
+// @objc gives the function the ability to interact with objective C code
+// userInfo dictionary from keyboard notification contains a bunch of info 
+// every animation has a curve (ie: ease in ease out, does it start full speed or end full speed?)
+// we can turn the starting frame as a rectangle, so we can capture the exact size of the frame
+// NSValue is a simple container for an objective C data item
+
+extension UIView {
+
+func bindToKeyboard() {
+  NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange( :)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+}
+
+@objc func keyboardWillChange(_ notification: NSNotification) {
+  let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+  let curve = notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! UInt
+  let startingFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+  let endingFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+  let deltaY = endingFrame.origin.y - startingFrame.origin.y
+}
+
+}
