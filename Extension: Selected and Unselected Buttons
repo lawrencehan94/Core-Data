@@ -1,0 +1,13 @@
+// When you tap on one button, the other one is deselected
+
+extension UIButton {
+  
+  func setSelectedColor() {
+    self.backgroundColor = COLOR LITERAL (bright green)
+  }
+  
+  func setDeselectedColor() {
+    self.backgroundColor = COLOR LITERAL (light green)
+  }
+  
+}
