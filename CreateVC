@@ -13,6 +13,10 @@ liveButtonPressed()
 bizdevButtonPressed()
 nextButtonPressed()
 
+viewDidLoad() {
+  nextButton.bindToKeyboard()
+}
+
 // stack view - bottom stack of buttons fill equally - 20pts of space, height constraint of 40-50
 // button when not selected is faded
 // next button is at the bottom (NEXT)
