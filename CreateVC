@@ -1,20 +1,37 @@
-Outlets: 
+// VARIABLES
+var priorityType: Priority = .live
+
+// OUTLETS 
 textView (What is your priority?, light grey text size 18)
 liveButton
 bizdevButton
 nextButton
 
-Actions: 
+// ACTIONS 
 backButtonPressed() {
   dismissDetail()
 }
 
-liveButtonPressed()
-bizdevButtonPressed()
-nextButtonPressed()
+liveButtonPressed() {
+  priorityType = .live
+  liveButton.setSelectedColor()
+  bizdevButton.setDeselectedColor()
+}
+
+bizdevButtonPressed() {
+  priorityType = .bizdev
+  bizdevButton.setSelectedColor()
+  liveButton.setDeselectedColor()
+}
+
+nextButtonPressed() {
+
+}
 
 viewDidLoad() {
-  nextButton.bindToKeyboard()
+  nextButton.bindToKeyboard() //the next button will slide up when keyboard is tapped (you could put a enter message field and send button at the bottom in a stack view and animate in similarly)
+  liveButton.setSelectedColor()
+  bizdevButton.setDeselectedColor()
 }
 
 // stack view - bottom stack of buttons fill equally - 20pts of space, height constraint of 40-50
